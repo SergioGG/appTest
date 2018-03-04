@@ -30,7 +30,7 @@ export class LoginPage {
   signin(){
     this.auth.registerUser(this.user.email,this.user.password)
     .then((user) => {
-      // El usuario se ha creado correctamente
+      //this.navCtrl.push()
     })
     .catch(err=>{
       let alert = this.alertCtrl.create({
