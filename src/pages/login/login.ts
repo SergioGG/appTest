@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { MainWindowPage } from '../main-window/main-window';
 
 /**
  * Generated class for the LoginPage page.
@@ -30,9 +31,33 @@ export class LoginPage {
   signin(){
     this.auth.registerUser(this.user.email,this.user.password)
     .then((user) => {
-      //this.navCtrl.push()
+      let alert = this.alertCtrl.create({
+        title: 'Registro',
+        message : "Te has registrado correctamente.",
+        buttons: ['Aceptar']
+      });
+      alert.present();
+      this.user.password = "";
     })
     .catch(err=>{
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        message : "Formato de e-mail inválido.",
+        subTitle: err.message,
+        buttons: ['Aceptar']
+      });
+      alert.present();
+    })
+
+  }
+
+  login()
+{
+    this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
+      this.navCtrl.push(MainWindowPage);
+      }
+    )
+     .catch(err=>{
       let alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: err.message,
@@ -40,7 +65,6 @@ export class LoginPage {
       });
       alert.present();
     })
-
   }
 
 }

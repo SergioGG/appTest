@@ -10,6 +10,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { LoginPageModule } from '../pages/login/login.module';
+import { MainWindowPage } from '../pages/main-window/main-window';
+import { MainWindowPageModule } from '../pages/main-window/main-window.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCVZ76Q0sOQdU_YtvqJXa1SIHeQvfeLMRI",
@@ -30,7 +32,9 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    LoginPageModule
+    LoginPageModule,
+    MainWindowPageModule
+    
 
   ],
   bootstrap: [IonicApp],
