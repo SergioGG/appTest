@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
+import { MainWindowPage } from '../pages/main-window/main-window';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +21,7 @@ export class MyApp {
       splashScreen.hide();
       this.auth.Session.subscribe(session=>{
         if(session){
-            this.rootPage = 'rootPage';
+            this.rootPage = 'MainWindowPage';
         }
           else{
             this.rootPage = 'LoginPage';
@@ -28,6 +29,10 @@ export class MyApp {
       });
       
     });
+  }
+
+  cerrarSesion(){
+    this.auth.logout();
   }
 }
 

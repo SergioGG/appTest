@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { OfertasEmpleoPage } from '../ofertas-empleo/ofertas-empleo';
+import { CompraVentaPage } from '../compra-venta/compra-venta';
 
 /**
  * Generated class for the MainWindowPage page.
@@ -21,6 +23,14 @@ export class MainWindowPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainWindowPage');
+  }
+
+  irOfertasEmpleo(){
+    this.navCtrl.push(OfertasEmpleoPage);
+  }
+
+  irCompraVenta(){
+    this.navCtrl.push(CompraVentaPage);
   }
 
   cerrarSesion(){

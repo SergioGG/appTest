@@ -43,7 +43,6 @@ export class LoginPage {
       let alert = this.alertCtrl.create({
         title: 'Error',
         message : "Formato de e-mail inválido.",
-        subTitle: err.message,
         buttons: ['Aceptar']
       });
       alert.present();

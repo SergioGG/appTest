@@ -5,26 +5,22 @@
   Ionic pages and navigation.
 -->
 
-<header>"Pantalla principal</header>
+<header>"Pantalla principal
+  
+</header>
 
 <ion-content class="card-background-page">
 
-  <ion-card>
-    <img src="assets/img/foro.png"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
+  <ion-card (click)="irOfertasEmpleo()">
+    <img src="assets/img/foro-empleo.png"/>
+    <div class="card-title">Ofertas de empleo</div>
+    <div class="card-subtitle">Encuentra y ofrece algún trabajo.</div>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="irCompraVenta()">
     <img src="assets/img/compra-venta.png"/>
-    <div class="card-title">Amsterdam</div>
-    <div class="card-subtitle">64 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/img/mapa.png"/>
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Listings</div>
+    <div class="card-title">Compra/venta de instrumentos</div>
+    <div class="card-subtitle"></div>
   </ion-card>
 
   <button ion-button block (click)="cerrarSesion()">Cerrar Sesión</button>

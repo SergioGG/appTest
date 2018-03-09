@@ -12,6 +12,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MainWindowPage } from '../pages/main-window/main-window';
 import { MainWindowPageModule } from '../pages/main-window/main-window.module';
+import { OfertasEmpleoPageModule } from '../pages/ofertas-empleo/ofertas-empleo.module';
+import { CompraVentaPageModule } from '../pages/compra-venta/compra-venta.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCVZ76Q0sOQdU_YtvqJXa1SIHeQvfeLMRI",
@@ -33,7 +35,9 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     LoginPageModule,
-    MainWindowPageModule
+    MainWindowPageModule,
+    OfertasEmpleoPageModule,
+    CompraVentaPageModule
     
 
   ],
