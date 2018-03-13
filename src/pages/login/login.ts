@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { MainWindowPage } from '../main-window/main-window';
+import { ResetPassPage } from '../reset-pass/reset-pass';
 
 /**
  * Generated class for the LoginPage page.
@@ -64,6 +65,10 @@ export class LoginPage {
       });
       alert.present();
     })
+  }
+
+  gotoResetPassword(){
+    this.navCtrl.push(ResetPassPage);
   }
 
 }
