@@ -22,9 +22,9 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       //DECLARACION DEL IDIOMA QUE SE USA
-      this.translateService.setDefaultLang('es');
-      this.translateService.use('es');
-      
+      this.translateService.setDefaultLang('es-ES');
+      this.translateService.use('es-ES');
+
       this.auth.Session.subscribe(session=>{
         if(session){
             this.rootPage = 'MainWindowPage';
