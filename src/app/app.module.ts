@@ -16,6 +16,17 @@ import { OfertasEmpleoPageModule } from '../pages/ofertas-empleo/ofertas-empleo.
 import { CompraVentaPageModule } from '../pages/compra-venta/compra-venta.module';
 import { ResetPassPageModule } from '../pages/reset-pass/reset-pass.module';
 
+//IMPORTS PARA INSTALAR MODULO DE TRADUCCIONES
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+
+//EXPORT PARA USAR i18n DE TRADUCCIONES
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, "../assets/i18n/", ".json");
+}
+
+//EXPORT PARA CONECTAR CON FIREBASE
 export const firebaseConfig = {
   apiKey: "AIzaSyCVZ76Q0sOQdU_YtvqJXa1SIHeQvfeLMRI",
     authDomain: "appprueba-b32f4.firebaseapp.com",
@@ -36,6 +47,14 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     LoginPageModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+          loader: {
+              provide: TranslateLoader,
+              useFactory: HttpLoaderFactory,
+              deps: [HttpClient]
+          }
+      }),
     MainWindowPageModule,
     OfertasEmpleoPageModule,
     CompraVentaPageModule,
